@@ -29,5 +29,12 @@ matrix = [[random.randint(-1000, 1000) for i in range(n)] for j in range(n)]
 for arr in matrix:
     print(*arr)
 print()
-for i in range(n):
-    print(*merge_sort(matrix[i]))
+for j in range(n):
+    arr = []
+    for i in range(n):
+        arr.append(matrix[i][j])
+    arr = merge_sort(arr)
+    for i in range(n):
+        matrix[i][j] = arr[i]
+for arr in matrix:
+    print(*arr)
